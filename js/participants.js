@@ -24,7 +24,7 @@ function showInfo(results) {
 
   console.log(window.data);
 
-  $('#header').append('<h4><b>'+window.data.length+'</b> people have registered so far.</h4>');
+  $('#header').append('<h5><b>'+window.data.length+'</b> people from 33 countries have registered.</h5>');
 
     window.data.sort(function(a, b) {
       return a['Family Name'] > b['Family Name'];
@@ -37,7 +37,7 @@ function showInfo(results) {
 
   var tr = table.insertRow(-1);                   // TABLE ROW.
 
-  var cols = ['Institution', 'Current Position', 'Talk Title'];
+  var cols = ['Affiliation', 'Current Position', 'Talk Title'];
 
   // ADD JSON DATA TO THE TABLE AS ROWS.
   for (var i = 0; i < window.data.length; i++) {
@@ -49,7 +49,7 @@ function showInfo(results) {
       tabCell.innerHTML = '<b>'+d['First Name']+' '+d['Family Name']+'</b>';
 
       var tabCell = tr.insertCell(-1);
-      tabCell.innerHTML = d['Institution'];
+      tabCell.innerHTML = d['Affiliation']+', '+d['Country of your affiliation'];
 
   }
 
